@@ -1,0 +1,36 @@
+section {
+  perspective: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+section .credit_card {
+  transform-style: preserve-3d;
+  transition: all 1s;
+  width: 35%;
+  height: auto;
+  position: relative;
+  aspect-ratio: 1600 / 978;
+  background-color: red;
+}
+section .credit_card:hover {
+  transform: rotateY(180deg);
+}
+section .credit_card .front,
+section .credit_card .back {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  backface-visibility: hidden;
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+  background-image: url(https://live.staticflickr.com/4048/5161864802_ee6f62942b_h.jpg);
+  transform: translateY(0deg);
+}
+section .credit_card .back {
+  transform: rotateY(180deg);
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxsFTeeHsDSenhAgQrpwaXRQpT7h03YM_DUA&usqp=CAU);
+}

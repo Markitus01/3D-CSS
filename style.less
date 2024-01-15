@@ -1,0 +1,47 @@
+section
+{
+    perspective: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+
+    .credit_card 
+    {
+        transform-style: preserve-3d;
+        // transform: rotateY(45deg);
+        transition: all 1s;
+        &:hover
+        {
+            transform: rotateY(180deg);
+            // transform: rotateX(180deg);
+        }
+
+        width: 35%;
+        height: auto;
+        position: relative;
+        aspect-ratio: 1600 / 978;
+        background-color: red;
+        // overflow: hidden;
+
+        .front, .back 
+        {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            backface-visibility: hidden;
+            height: 100%;
+            width: 100%;
+            background-size: contain;
+            background-image: url(https://live.staticflickr.com/4048/5161864802_ee6f62942b_h.jpg);
+            transform: translateY(0deg);
+        }
+
+        .back
+        {
+            transform: rotateY(180deg);
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxsFTeeHsDSenhAgQrpwaXRQpT7h03YM_DUA&usqp=CAU);
+        }
+    }
+}
