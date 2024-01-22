@@ -1,0 +1,53 @@
+html,
+body,
+main {
+  height: 100%;
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 500px;
+}
+main .cube {
+  position: relative;
+  width: 20vw;
+  aspect-ratio: 1/1;
+  transform: rotateY(0deg) rotateX(0deg);
+  transition: transform 5s;
+  transform-style: preserve-3d;
+}
+main .cube:hover {
+  transform: rotateY(360deg) rotateX(360deg);
+}
+main .cube div {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  backface-visibility: hidden;
+}
+main .cube div.front {
+  background-color: red;
+}
+main .cube div.back {
+  background-color: orange;
+  transform: translateZ(-20vw) rotateX(180deg);
+}
+main .cube div.top {
+  background-color: purple;
+  transform: translateZ(-10vw) translateY(10vw) rotateX(-90deg);
+}
+main .cube div.bottom {
+  background-color: greenyellow;
+  transform: translateZ(-10vw) translateY(-10vw) rotateX(90deg);
+}
+main .cube div.right {
+  background-color: gold;
+  transform: translateZ(-10vw) translateX(10vw) rotateY(90deg);
+}
+main .cube div.left {
+  background-color: blue;
+  transform: translateZ(-10vw) translateX(-10vw) rotateY(-90deg);
+}
