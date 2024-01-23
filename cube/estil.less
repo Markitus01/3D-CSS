@@ -8,6 +8,7 @@ html, body, main
 
 main 
 {
+    background-color: #30336b;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,6 +37,16 @@ main
             position: absolute;
             top: 0px;
             left: 0px;
+
+            &.front, &.back, &.top, &.bottom, &.right, &.left
+            {
+                img 
+                {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
 
             &.front{ background-color: red; }
 
