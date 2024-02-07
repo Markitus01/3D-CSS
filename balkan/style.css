@@ -1,0 +1,60 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+html body {
+  width: 100%;
+  height: 100%;
+}
+html body main {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: blueviolet;
+}
+html body main .capsa {
+  position: relative;
+  color: white;
+  background-color: red;
+  width: 30%;
+  aspect-ratio: 4/3;
+  border: 2px solid black;
+}
+html body main .capsa div {
+  position: relative;
+}
+html body main .capsa div:after {
+  left: 0%;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-size: cover;
+  background-image: url(balkan.webp);
+  overflow: hidden;
+}
+html body main .capsa > div {
+  width: 500%;
+  height: 100%;
+  background-color: aqua;
+  position: relative;
+  transform-style: preserve-3d;
+}
+html body main .capsa > div div {
+  position: absolute;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  border: 1px solid blue;
+  background-color: aquamarine;
+  transform-style: preserve-3d;
+  transform-origin: 0% 50%;
+  transform: rotateY(0deg);
+  background-position: 20%;
+}
+html body main .capsa > div:hover div div {
+  transition: all 1s;
+  transform: rotateY(-20deg);
+}

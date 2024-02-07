@@ -30,8 +30,17 @@ html, body, main
 
       ul
       {
-         animation:anim_serp 5*@time infinite;
          display: flex;
+         // animation:anim_serp 5*@time infinite;
+         animation:anim_serp 2s linear infinite;
+         animation-fill-mode: forwards;
+         animation-direction: normal;
+         animation-play-state: paused;
+
+         &:hover
+         {
+            animation-play-state: running;
+         }
 
          li
          {

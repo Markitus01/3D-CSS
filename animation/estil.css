@@ -34,8 +34,16 @@ main main {
 html main ul,
 body main ul,
 main main ul {
-  animation: anim_serp 5s infinite;
   display: flex;
+  animation: anim_serp 2s linear infinite;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+  animation-play-state: paused;
+}
+html main ul:hover,
+body main ul:hover,
+main main ul:hover {
+  animation-play-state: running;
 }
 html main ul li,
 body main ul li,
