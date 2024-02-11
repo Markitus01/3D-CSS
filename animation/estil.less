@@ -15,64 +15,103 @@
    100%{transform:translateX(-1000px);}
 }
 
+@keyframes bubongos
+{
+   0%    {background-position: 0px 0px;}
+   100%  {background-position: (4*23px) 0px;}
+}
+
+@keyframes camina_amonogs 
+{
+   0%    {top: 0%; left: 0%; transform: rotate(0deg);}
+   24%   {top: 0%; left: calc(98% - 30px); transform: rotate(0deg);}
+   25%   {top: 0%; left: calc(98% - 30px); transform: rotate(90deg);}
+   49%   {top: 95%; left: 98%; transform: rotate(90deg);}
+   50%   {top: 95%; left: 98%; transform: rotate(180deg);}
+   74%   {top: 95%; left: 0%; transform: rotate(180deg);}
+   75%   {top: 95%; left: 0%; transform: rotate(260deg);}
+   99%   {top: 95%; left: 0%; transform: rotate(260deg);}
+   100%  {top: 0%; left: 0%; transform: rotate(360deg);}
+}
+
 @time:1s;
 @num_boles:10;
 html, body, main
 {
    width:100%;
    height:100%;
-
-   main
+   .caminador
    {
-      display:flex;
-      align-items: center;
-      justify-content: center;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      animation: camina_amonogs 12s linear infinite;
 
-      ul
+      .sprite 
       {
-         display: flex;
-         // animation:anim_serp 5*@time infinite;
-         animation:anim_serp 2s linear infinite;
-         animation-fill-mode: forwards;
-         animation-direction: normal;
-         animation-play-state: paused;
-
-         &:hover
-         {
-            animation-play-state: running;
-         }
-
-         li
-         {
-            animation: anim_bola @time infinite;
-            animation-timing-function:ease-in-out;
-            display:block;
-            width:40px;
-            height:40px;
-            background-color: purple;
-            border-radius: 50%;
-
-            each(range(2, @num_boles, 1),
-            {
-               &:nth-child(@{value})
-               {
-                  animation-delay: ((@value - 1) * @time / @num_boles);
-               }
-            });
-
-            &::after
-            {
-               width:40px;
-               height:40px;
-               display: block;
-               position:relative;
-               content: "";
-               border-radius: 50%;
-               box-shadow: 3px 3px 4px #000;
-            }
-         }
+         width: 22px;
+         height: 34px;
+         background-image: url(./amongus_sprites.png);
+         animation: bubongos 0.375s;
+         animation-iteration-count: infinite;
+         animation-timing-function: steps(4);         
+         // background-position: 23px;
       }
    }
+   
+
+   // main
+   // {
+   //    display:flex;
+   //    align-items: center;
+   //    justify-content: center;
+
+
+   //    ul
+   //    {
+   //       display: flex;
+   //       // animation:anim_serp 5*@time infinite;
+   //       animation:anim_serp 2s linear infinite;
+   //       animation-fill-mode: forwards;
+   //       animation-direction: normal;
+   //       // animation-play-state: paused;
+
+   //       // &:hover
+   //       // {
+   //       //    animation-play-state: running;
+   //       // }
+
+   //       li
+   //       {
+   //          animation: anim_bola @time infinite;
+   //          animation-timing-function:ease-in-out;
+   //          display:block;
+   //          width:40px;
+   //          height:40px;
+   //          background-color: purple;
+   //          border-radius: 50%;
+
+   //          each(range(2, @num_boles, 1),
+   //          {
+   //             &:nth-child(@{value})
+   //             {
+   //                animation-delay: ((@value - 1) * @time / @num_boles);
+   //             }
+   //          });
+
+   //          &::after
+   //          {
+   //             width:40px;
+   //             height:40px;
+   //             display: block;
+   //             position:relative;
+   //             content: "";
+   //             border-radius: 50%;
+   //             box-shadow: 3px 3px 4px #000;
+   //          }
+   //       }
+   //    }
+   // }
 }
 
 
